@@ -1,0 +1,194 @@
+/* Reset some default browser styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 10px;
+  background-color: #e8dceb;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.card-price {
+  color: #712b84;
+  font-size: 14px;
+}
+
+.card-button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #712b84;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+}
+
+.filters {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next row */
+  gap: 10px;
+}
+
+.filter-select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  flex: 1 1 calc(50% - 10px); /* Each dropdown takes 50% width minus the gap */
+  min-width: 150px; /* Ensures a minimum size for each dropdown */
+}
+
+@media (min-width: 768px) {
+  /* On larger screens, display all dropdowns in a single row */
+  .filters {
+    flex-wrap: nowrap; /* Prevent wrapping */
+  }
+  .filter-select {
+    flex: 1; /* Reset to equal size */
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.modal-close {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #ff5c5c;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  float:right
+}
+
+.modal-close:hover {
+  background-color: #cc0000;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+.loader-on-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+select {
+  border: 1px solid var(--grayDarker);
+  padding: 12px 16px;
+  border-radius: 5px !important;
+  background: transparent !important;
+  width: 100%;
+  font-size: 16px;
+  &::placeholder {
+      font-size: 16px;
+  }
+  &:focus-visible {
+      outline: 2px solid #712b84;
+      outline-offset: 2px;
+      z-index: 9;
+      @media screen and (min-width: 1680px) {
+          outline-offset: 3px;
+          outline-width: 3px;
+      }
+      @media screen and (min-width: 2100px) {
+          outline-offset: 4px;
+          outline-width: 4px;
+      }
+  }
+
+  @media screen and (max-width: 1600px) {
+      font-size: 16px;
+  }
+  
+}
+
+.list-loader{
+  margin-left:auto;
+  margin-right: auto;
+}

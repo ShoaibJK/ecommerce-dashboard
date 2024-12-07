@@ -23,10 +23,16 @@ const ProductList = () => {
   const getTotalPage = (links:string)=>{
     try{
       const linksList = links?.split(", ")
-    const lastLink = linksList[linksList.length - 1];
+      const lastLink = linksList[linksList.length - 1];
+      const matchResult = lastLink?.match(/<(.+?)>/);
+const result = matchResult?.[1] ?? ''; // Fallback to `null` if matchResult or matchResult[1] is null
+console.log(result);
+
+    
+
 
     // Extract the URL part between the angle brackets
-    const url = lastLink?.match(/<(.+?)>/)[1];
+    const url = result
 
     // Get the query parameters
     const params = new URL(url).searchParams;
@@ -72,9 +78,9 @@ const ProductList = () => {
     }
   };
   /*this method adds debouncing to API on scroll so that unnecessary API call can be avoided.*/
-  function debounce(func: (this: Window, ev: Event) => any, delay:number) {
+  function debounce<T extends unknown[]>(func: (...args:T)=>any, delay:number) {
     let timeoutId:number;
-    return function (...args) {
+    return function (...args:T) {
       if (timeoutId) {
         clearTimeout(timeoutId);
       }

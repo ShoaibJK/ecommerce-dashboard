@@ -13,8 +13,8 @@
 /*About the frontend*/
 1. Vite is used for faster build process
 2. All the components used are inside component folder
-3. for utility, utils folder is created that have constant,types and alert toast files.
-4. For loading image with better UX I have added loader on the Image, if the image load fails the fallback is placeholder image.
+3. For utility, utils folder is created that have constant,types and alert toast files.
+4. For loading image with better UX  loader on the Image is added, if the image load fails the fallback is placeholder image.
 5. For infinite scroll debouncing of 0.5 secs is used so that even if user scroll multiple times the API call could be optimize.
 6. Toaster is added for API error to handle error messages.
 

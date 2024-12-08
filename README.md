@@ -22,3 +22,4 @@
 1. Currently all the css is written in the index.css file, that could have been broken into component level css files.
 2. preprocessor like scss can be used.
 3. Filters and sorting could be persist on page reload.
+4. The application could not be hosted on github pages because json server does not provide a server to run the APIs

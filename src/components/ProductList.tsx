@@ -25,26 +25,21 @@ const ProductList = () => {
       const linksList = links?.split(", ")
       const lastLink = linksList[linksList.length - 1];
       const matchResult = lastLink?.match(/<(.+?)>/);
-const result = matchResult?.[1] ?? ''; // Fallback to `null` if matchResult or matchResult[1] is null
-console.log(result);
+      const result = matchResult?.[1] ?? ''; // Fallback to `null` if matchResult or matchResult[1] is null
+      // Extract the URL part between the angle brackets
+      const url = result
 
-    
+      // Get the query parameters
+      const params = new URL(url).searchParams;
 
-
-    // Extract the URL part between the angle brackets
-    const url = result
-
-    // Get the query parameters
-    const params = new URL(url).searchParams;
-
-    // Extract the `_page` value
-    const _page = params.get('_page')||0;
-    return +_page;
-    }
-    catch(error){
-      console.log("error", error)
-      return 1;
-    }
+      // Extract the `_page` value
+      const _page = params.get('_page')||0;
+      return +_page;
+      }
+      catch(error){
+        console.log("error", error)
+        return 1;
+      }
     
   }
   const fetchProducts = async () => {

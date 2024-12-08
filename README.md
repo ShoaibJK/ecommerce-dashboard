@@ -11,15 +11,18 @@
 3. npm run server, will start the backend of the application. 
 
 /*About the frontend*/
-1. Vite is used for faster build process
-2. All the components used are inside component folder
+1. Vite is used for faster build process.
+2. All the components used are inside component folder.
 3. For utility, utils folder is created that have constant,types and alert toast files.
 4. For loading image with better UX  loader on the Image is added, if the image load fails the fallback is placeholder image.
 5. For infinite scroll debouncing of 0.5 secs is used so that even if user scroll multiple times the API call could be optimize.
 6. Toaster is added for API error to handle error messages.
+7. The product list api have a limit of 20 product per page, so on each scroll to bottom next 20 product will be fetch.
+8. On click of "View Detail" product detail api is called that fetches detail based upon product id.
+
 
 /*Further Enhancement*/
 1. Currently all the css is written in the index.css file, that could have been broken into component level css files.
-2. preprocessor like scss can be used.
+2. Preprocessor like scss can be used.
 3. Filters and sorting could be persist on page reload.
 4. The application could not be hosted on github pages because json server does not provide a server to run the APIs
